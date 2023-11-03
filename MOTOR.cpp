@@ -39,7 +39,7 @@ void MOTOR::forceStop(){
 }
 
 void MOTOR::forceStart(float speed_){
-     move(1 * (speed_ > 0) ? 1 : ((speed_ < 0) ? -1 : 0));
+     move((1 * (speed_ > 0)) ? 1 : ((speed_ < 0) ? -1 : 0));
      delay(50);
      move(speed_);
 }
