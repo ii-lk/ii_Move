@@ -59,16 +59,18 @@ void MOTOR::forceStart(float speed_)
 void MOTOR::move(float speed_)
 {
 
+    value = speed_;
+
     bool dir_ = speed_ > 0; // get direction
-    Serial.println("dir_:" + String(dir_));
-    int pwmvalue_; // pwm value
+                            // Serial.println("dir_:" + String(dir_));
+    int pwmvalue_;          // pwm value
 
     // if(speed_!=0){
     speed_ = abs(speed_);                                      // get abalute button
     speed_ = (speed_ < -1) ? -1 : ((speed_ > 1) ? 1 : speed_); // validate input value -1,1
     pwmvalue_ = min + ((max - min) * speed_ * propotion);
     // }
-    Serial.println("inverse:" + String(inverse));
+    //  Serial.println("inverse:" + String(inverse));
 
     if (inverse)
     {
@@ -81,8 +83,8 @@ void MOTOR::move(float speed_)
 
     pwmvalue = pwmvalue_;
 
-    Serial.println(String(speed_) + '\t' + String(255 - pwmvalue_) + '\t' + String(pwmvalue));
+    // Serial.println(String(speed_) + '\t' + String(255 - pwmvalue_) + '\t' + String(pwmvalue));
 
-    analogWrite(pinDIR, 255 - pwmvalue_);
+    analogWrite(pinDIR, dir * 255);
     analogWrite(pinPWM, pwmvalue_);
 }
