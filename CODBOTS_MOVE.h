@@ -23,7 +23,6 @@ public:
     bool start();
     // stop all movemenets
     void stop();
-
     // millis per 1dig rotate
     void setRotationalFactor(float f);
 

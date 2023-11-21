@@ -1,4 +1,3 @@
-
 #include <CODBOTS_MOVE.h>
 
 CODBOTS_MOVE::CODBOTS_MOVE()
