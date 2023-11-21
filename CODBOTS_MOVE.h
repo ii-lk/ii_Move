@@ -6,7 +6,7 @@
 #include <MOTOR.h>
 #include <tuple>
 
-#define MAX_MOTORS 10 // Define the maximum number of motors
+#define MAX_MOTORS 4 // Define the maximum number of motors
 
 class CODBOTS_MOVE
 {
