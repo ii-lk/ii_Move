@@ -1,6 +1,6 @@
 
-#ifndef CODBOTS_MOVE_h
-#define CODBOTS_MOVE_h
+#ifndef ii_MOVE_h
+#define ii_MOVE_h
 
 #include <Arduino.h>
 #include <MOTOR.h>
@@ -8,11 +8,11 @@
 
 #define MAX_MOTORS 4 // Define the maximum number of motors
 
-class CODBOTS_MOVE
+class ii_MOVE
 {
 
 public:
-    CODBOTS_MOVE();
+    ii_MOVE();
     int addMotor(MOTOR m);
     float m0;
     float m1;

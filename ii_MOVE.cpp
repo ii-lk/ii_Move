@@ -1,10 +1,10 @@
-#include <CODBOTS_MOVE.h>
+#include <ii_MOVE.h>
 
-CODBOTS_MOVE::CODBOTS_MOVE()
+ii_MOVE::ii_MOVE()
 {
 }
 // Implement the addMotor function
-int CODBOTS_MOVE::addMotor(MOTOR m)
+int ii_MOVE::addMotor(MOTOR m)
 {
     if (motorCount < MAX_MOTORS)
     {
@@ -14,7 +14,7 @@ int CODBOTS_MOVE::addMotor(MOTOR m)
     return motorCount; // Return the new count
 }
 
-void CODBOTS_MOVE::move(float m0_, float m1_)
+void ii_MOVE::move(float m0_, float m1_)
 {
     if (motorCount > 1 && (motors[0].value != m0_ || motors[1].value != m1_))
     {
@@ -26,19 +26,19 @@ void CODBOTS_MOVE::move(float m0_, float m1_)
     }
 }
 
-void CODBOTS_MOVE::setRotationalFactor(float f)
+void ii_MOVE::setRotationalFactor(float f)
 {
     this->rotational_factor = f;
 }
 
-void CODBOTS_MOVE::rotate(int angle_)
+void ii_MOVE::rotate(int angle_)
 {
     starttime = 0;
     angle = angle_;
     duration = abs(angle) * rotational_factor;
 }
 
-bool CODBOTS_MOVE::start()
+bool ii_MOVE::start()
 {
     if (starttime == 0)
     {
@@ -64,7 +64,7 @@ bool CODBOTS_MOVE::start()
     }
 }
 
-void CODBOTS_MOVE::stop()
+void ii_MOVE::stop()
 {
     move(0, 0);
 }

@@ -1,5 +1,5 @@
 
-#include <CODBOTS_MOVE.h>
+#include <ii_MOVE.h>
 
 // motor pins
 #define MOTOR_L2 33 //PWM
@@ -7,7 +7,7 @@
 #define MOTOR_R1 26
 #define MOTOR_R2 27  //PWM
 
-CODBOTS_MOVE move;
+ii_MOVE move;
 void setup() {
   Serial.begin(115200);
 
